@@ -11,10 +11,12 @@
 <body>
     <section id="app" class="hero is-fullheight is-primary">
         <div class="hero-body">
-            <div class="container">
-            <h1 class="title has-text-centered">
+            <div class="container has-text-centered">
+            <h1 class="title">
+                Je peux pas,<br><br>
                 {{ sentence }}
             </h1>
+            <a @click="generate" class="button" style="margin-top:30px">Nouvelle excuse?</a>
             </div>
         </div>
     </section>
@@ -24,16 +26,16 @@
             data() {
                 return {
                     events: [
-                        "C'est le baptême",
-                        "C'est l'anniversaire",
-                        "C'est la bar mitzvah",
-                        "C'est le mariage",
-                        "C'est la pendaison de crémaillère",
-                        "C'est l'enterrement",
-                        "C'est la remise de diplôme",
-                        "C'est l'EVG",
-                        "C'est le déménagement",
-                        "C'est le pot de départ",
+                        "j'ai le baptême",
+                        "j'ai l'anniversaire",
+                        "j'ai la bar mitzvah",
+                        "j'ai le mariage",
+                        "j'ai la pendaison de crémaillère",
+                        "j'ai l'enterrement",
+                        "j'ai la remise de diplôme",
+                        "j'ai l'EVG",
+                        "j'ai le déménagement",
+                        "j'ai le pot de départ",
                     ],
                     relatives: [
                         "de mon oncle",
@@ -51,10 +53,15 @@
                     sentence: null,
                 }
             },
+            methods: {
+                generate() {
+                    let randomEvent = this.events[Math.floor(Math.random() * this.events.length)]
+                    let randomRelative = this.relatives[Math.floor(Math.random() * this.relatives.length)]
+                    this.sentence = `${randomEvent} ${randomRelative}.`
+                }
+            },
             beforeMount() {
-                let randomEvent = this.events[Math.floor(Math.random() * this.events.length)]
-                let randomRelative = this.relatives[Math.floor(Math.random() * this.relatives.length)]
-                this.sentence = `${randomEvent} ${randomRelative}.`
+                this.generate()
             }
         })
     </script>
