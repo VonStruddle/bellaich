@@ -26,12 +26,14 @@
                     events: [
                         "C'est le baptême",
                         "C'est l'anniversaire",
-                        "C'est la barmitzva",
+                        "C'est la bar mitzvah",
                         "C'est le mariage",
                         "C'est la pendaison de crémaillère",
                         "C'est l'enterrement",
                         "C'est la remise de diplôme",
                         "C'est l'EVG",
+                        "C'est le déménagement",
+                        "C'est le pot de départ",
                     ],
                     relatives: [
                         "de mon oncle",
@@ -43,6 +45,8 @@
                         "d'un pote zinzin",
                         "d'un gars que j'aime pas",
                         "d'un ancien collègue relou",
+                        "de ma grand-mère",
+                        "de mon grand-père",
                     ],
                     sentence: null,
                 }
@@ -50,7 +54,7 @@
             beforeMount() {
                 let randomEvent = this.events[Math.floor(Math.random() * this.events.length)]
                 let randomRelative = this.relatives[Math.floor(Math.random() * this.relatives.length)]
-                this.sentence = `${randomEvent} ${randomRelative}`
+                this.sentence = `${randomEvent} ${randomRelative}.`
             }
         })
     </script>
