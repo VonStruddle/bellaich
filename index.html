@@ -12,11 +12,14 @@
     <section id="app" class="hero is-fullheight is-primary">
         <div class="hero-body">
             <div class="container has-text-centered">
-            <h1 class="title">
-                Je peux pas,<br><br>
-                {{ sentence }}
-            </h1>
-            <a @click="generate" class="button" style="margin-top:30px">Nouvelle excuse ?</a>
+                <video autoplay muted loop id="myVideo" style="max-height:450px;margin-bottom:30px">
+                    <source src="zinzin.mp4" type="video/mp4">
+                </video>
+                <h1 class="title">
+                    Je peux pas,<br><br>
+                    {{ sentence }}
+                </h1>
+                <a @click="generate" class="button" style="margin-top:30px">Nouvelle excuse ?</a>
             </div>
         </div>
     </section>
